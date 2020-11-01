@@ -1,0 +1,37 @@
+@mixin respond-to($media) {
+	@if ($media == bigger-desctop) {
+		@media only screen and (max-width : 1601px) {
+			@content
+		}
+	}
+
+	@if ($media == big-desctop) {
+		@media only screen and (max-width : 1441px) {
+			@content
+		}
+	}
+
+	@if ($media == desctop) {
+		@media only screen and (max-width : 1201px) {
+			@content
+		}
+	}
+
+	@if ($media == tablet) {
+		@media only screen and (max-width : 993px) {
+			@content
+		}
+	}
+
+	@if ($media == small-tablet) {
+		@media only screen and (max-width : 769px) {
+			@content
+		}
+	}
+
+	@if ($media == mobile) {
+		@media only screen and (max-width : 579px) {
+			@content
+		}
+	}
+}

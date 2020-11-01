@@ -1,0 +1,13 @@
+.label {
+    display: block;
+
+    font-size: 13px*$tem;
+    line-height: 1;
+
+    color: $wolf;
+    font-family: $font-family-medium;
+
+    @include respond-to(mobile) {
+        font-size: 14px*$tem;
+    }
+}

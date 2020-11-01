@@ -1,0 +1,79 @@
+@import "../../mixin/btn";
+
+.button {
+    &[data-color="green"] {
+        @include btn-variant(
+            $bg: $btn-bg-secondary,
+            $bg-hover: $bg-hover-btn-secondary);
+    }
+
+    &[data-color="purple"] {
+        @include btn-variant(
+            $bg: $btn-bg-primary,
+            $bg-hover: $bg-hover-btn);
+    }
+
+    &[data-color="gray"] {
+        @include btn-variant(
+            $bg: $btn-bg-other,
+            $bg-hover: $bg-hover-btn-other);
+    }
+
+    &[data-selected="select"] {
+        @include btn-variant(
+            $bg: $rose,
+            $color: #ffffff,
+            $bg-hover: $rose,
+        );
+
+        box-shadow: 0px 1px 7px rgba(0,0,0, 0.3) inset;
+    }
+
+    &[data-color="light-purple"] {
+        @include btn-variant(
+            $bg: #ab7de3,
+            $bg-hover: lighten(#ab7de3, 8%));
+
+        color:  $snow;
+    }
+
+    &[data-color="light-purple-reverse"] {
+        @include btn-variant(
+            $bg-hover: #ab7de3,
+            $bg: #fff,
+            $color: #4f6173,
+            $color-hover: #ffffff,
+            $border-color: #e6ebf1);
+
+        &:hover {
+            border-color: #ab7de3;
+        }
+    }
+
+    &[data-color="red"] {
+        @include btn-variant(
+            $bg: #cd5c5c,
+            $bg-hover: lighten(#cd5c5c, 8%));
+    }
+
+    &[data-color="purple-reverse"] {
+        @include btn-variant(
+            $bg: #dee6f0,
+            $bg-hover: #8a89b7,
+            $color: #4f6173);
+    }
+
+    &[data-color="lightness-purple"] {
+        @include btn-variant(
+            $bg: #8f8ebd,
+            $bg-hover: #9f9ec6,
+            $color: #fff);
+    }
+
+    &[data-color="blue"] {
+        @include btn-variant(
+            $bg: #5199dd,
+            $bg-hover: #6db8ff,
+            $color: #fff);
+    }
+}

@@ -1,0 +1,582 @@
+//Миксины, шрифты, переменные, цвета
+@import "abstracts/variables";
+@import "base/fonts";
+@import "abstracts/color";
+@import "mixin/mediaScreen";
+@import "mixin/btn";
+
+// база для страницы
+@import "base/base";
+
+@import "components/input/input";
+@import "components/label/label";
+
+@import "components/button/button"; //основные стили для кнопки
+@import "components/button/data-color"; //цвета кнопки
+@import "components/button/data-size"; //размеры кнопки
+
+
+.interfaces {
+    text-align: center;
+
+    &__title {
+        display: block;
+        margin-top: 15px * $rem;
+
+        font-family: $font-family-bold;
+        font-size: 22px * $tem;
+        text-align: center;
+
+        color: $snow;
+
+        @include respond-to(mobile) {
+            font-size: 30px * $tem;
+        }
+    }
+
+    &__text {
+        margin-bottom: 20px * $rem;
+
+        color: #ffffff;
+        font-size: 16px * $rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include respond-to(mobile) {
+            margin-bottom: 15px * $rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            font-size: 18px * $tem;
+        }
+    }
+
+    &__link {
+        display: inline;
+
+        color: #14a9cc;
+    }
+
+    &__descr {
+        margin-top: 20px * $rem;
+
+        font-size: 18px * $rem;
+        line-height: 1.2;
+
+        color: #ffffff;
+
+        opacity: 0.6;
+    }
+
+    &__footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding-bottom: 10px;
+
+        font-size: 14px;
+        color: #ffffff;
+
+        &[data-color="gray"] {
+            color: #bfbed9;
+        }
+
+        @include respond-to(small-tablet) {
+            position: static;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            flex: 0 0 auto;
+        }
+    }
+
+    &_404 {
+        padding: 0 15px;
+        height: 100vh;
+        min-height: 100vh;
+
+        @include respond-to(small-tablet) {
+            padding: 0 15px;
+        }
+    }
+
+    &_browsers {
+        padding: 10px 10px;
+
+        & .interfaces__footer {
+            position: static;
+            padding-bottom: 0;
+
+            @include respond-to(small-tablet) {
+                padding-bottom: 10px;
+            }
+        }
+
+        @include respond-to(small-tablet) {
+            padding: 0 15px;
+        }
+    }
+}
+
+wrapper-interfaces {
+    position: relative;
+    width: 100%;
+    padding: 50px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100vh;
+
+    background-color: #47016f;
+
+    overflow-y: auto;
+
+    @include respond-to(mobile) {
+        padding-top: 25px * $rem;
+        padding-bottom: 25px * $rem;
+    }
+
+    &[data-bg="purple"] {
+        background-color: $bg-404;
+    }
+}
+
+.show-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+
+    cursor: pointer;
+
+    &::before {
+        display: none;
+        font-size: 20px * $tem;
+        font-family: "Font Awesome 5 Pro";
+        font-weight: bold;
+
+        color: #909090;
+    }
+}
+
+.form-interfaces {
+    width: 100%;
+    // max-width: 360px;
+    margin-top: 20px * $rem;
+
+    @include respond-to(mobile) {
+        // margin-top: 50px * $rem;
+    }
+
+    &__item {
+        position: relative;
+        z-index: 2;
+
+        margin-bottom: 8px;
+
+        background: rgba(252, 252, 253, 0.08);
+    }
+
+    &__label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        z-index: -1;
+
+        display: block;
+
+        line-height: 1;
+        font-family: $font-family-base;
+
+        font-size: 14px * $tem;
+
+        color: #909090;
+
+        transition: all 0.3s ease;
+
+        &[disabled] {
+            opacity: 0.5;
+        }
+    }
+
+    &__input {
+        padding-left: 15px * $rem;
+        padding-right: 15px * $rem;
+        width: 100%;
+        height: 48px * $rem;
+        display: block;
+
+        font-size: 14px * $tem;
+        font-family: $font-family-base;
+        text-align: left;
+
+        background-color: transparent;
+
+        color: #ffffff;
+        border: none;
+        outline: none;
+
+        &:focus + label,
+        &[data-have-content="1"] + label {
+            transform: translateY(5px);
+            top: 0;
+
+            font-size: 10px * $tem;
+        }
+
+        &:focus + span + label,
+        &[data-have-content="1"] + span + label {
+            transform: translateY(5px);
+            top: 0;
+
+            font-size: 10px * $tem;
+        }
+
+        &[type="password"] ~ .show-password::before {
+            content: "\f06e";
+        }
+
+        &[type="text"] ~ .show-password::before {
+            content: "\f070";
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        margin-top: 20px * $rem;
+        margin-bottom: 30px * $rem;
+
+        button {
+            height: 50px * $rem;
+        }
+
+        @include respond-to(mobile) {
+            margin-top: 40px * $rem;
+            margin-bottom: 40px * $rem;
+        }
+    }
+}
+
+
+//form registration
+
+.authorization {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: url(../images/Bg-authorization.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-y: scroll;
+}
+
+.authorization-wrapper {
+    display: flex;
+    width: 60%;
+    max-width: 1100px;
+}
+
+//  area image
+.authorization-banner {
+    position: relative;
+    flex: 0 1 45%;
+
+    &__img {
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        font-size: 3.75rem;
+        line-height: 64px;
+        letter-spacing: 8px;
+        font-weight: 600;
+        color: #ffffff;
+        transform: translate(-50%, -50%);
+    }
+}
+
+//   area form
+.authorization-form {
+    flex: 0 1 55%;
+    background: rgba(0, 0, 0, 0.41);
+
+    &__inner {
+        width: 70%;
+        margin: 0 auto;
+        padding: 50px 0 30px 0;
+    }
+
+    &__logo {
+        width: 80%;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__label {
+        font-size: 1.125rem;
+    }
+
+    &__inputs {
+        width: 100%;
+        margin-top: 40px;
+    }
+    &__item{
+        border-radius: $border-radius;
+        overflow: hidden;
+    }
+    &__input {
+        background: rgba(24, 26, 38, 0.6);
+        
+    }
+
+    &__btn {
+        width: 90%;
+        margin: 40px auto 0 auto;
+    }
+
+    // &__btn-text{
+    //     font-size: 1.125rem;
+    // }
+
+    &__forgot {
+        margin: 25px 0 0 0;
+        padding-bottom: 25px;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 20px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+
+        a {
+            color: #ffffff;
+        }
+    }
+
+    &__policy {
+        margin-top: 60px;
+        font-size: 0.875rem;
+        text-align: center;
+        color: #ffffff;
+        position: relative;
+        span {
+            a {
+                display: inline-block;
+                color: #ffffff;
+                border-bottom: 1px solid #ffffff;
+            }
+        }
+    }
+}
+
+#password{
+    padding-right: 60px * $rem;
+}
+
+// blackout input on focus
+.authorization-form__inputs .authorization-form__input:focus {
+    background: rgba(24, 26, 38, 0.671);
+}
+
+// status input
+.authorization-form__status {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+
+    &[data-status="empty"] {
+        background-color: #9090902d;
+    }
+
+    &[data-status="focus"] {
+        background-color: #0a53ab;
+    }
+
+    &[data-status="success"] {
+        background-color: $salt;
+    }
+
+    &[data-status="error"] {
+        background-color: #cd5c5c;
+    }
+}
+
+.icon_password{
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+}
+
+@media only screen and (max-width: 1441px) {
+    .authorization-wrapper {
+        width: 70%;
+    }
+
+    .authorization-banner {
+        // flex: 0 1 40%;
+    }
+
+    .authorization-form {
+        // flex: 0 1 60%;
+    }
+}
+
+@media only screen and (max-width: 1201px) {
+    .authorization-wrapper {
+        width: 80%;
+    }
+    //  area image
+    .authorization-banner {
+        flex: 0 1 45%;
+        &__text {
+            font-size: 3rem;
+        }
+    }
+
+    //   area form
+    .authorization-form {
+        flex: 0 1 55%;
+    }
+}
+
+@media only screen and (max-width: 993px) {
+    .authorization-wrapper {
+        width: 60%;
+    }
+
+    //  area image
+    .authorization-banner {
+        display: none;
+    }
+
+    //   area form
+    .authorization-form {
+        flex: 0 1 100%;
+
+        &__inner {
+            width: 80%;
+            padding: 40px 0 20px 0;
+        }
+
+        &__inputs {
+            margin-top: 60px;
+        }
+
+        &__btn {
+            margin: 30px auto 0 auto;
+        }
+
+        &__forgot {
+            margin: 20px 0 0 0;
+            padding-bottom: 20px;
+        }
+
+        &__policy {
+            margin-top: 40px;
+            font-size: 0.625rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 579px) {
+    .authorization-wrapper {
+        width: 90%;
+    }
+
+    //   area form
+    .authorization-form {
+        &__logo {
+            width: 70%;
+        }
+
+        &__inner {
+            width: 90%;
+            padding: 20px 0 10px 0;
+        }
+
+        &__inputs {
+            margin-top: 35px;
+            margin-bottom: 10px;
+        }
+
+        &__btn {
+            width: 100%;
+        }
+
+        &__btn {
+            margin: 0 auto ;
+        }
+
+        &__forgot {
+            margin: 15px 0 0 0;
+            padding-bottom: 15px;
+            font-size: 0.75rem;
+        }
+
+        &__policy {
+            margin-top: 30px;
+            font-size: 0.75rem;
+        }
+    }
+}
+
+input{
+    @media (max-width: 768px) {
+        font-size: 16px !important;
+      }
+}
+
+.notice{
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: #cd5c5c;
+    text-align: center;
+
+    @media (max-width: 576px) {
+        font-size: 12px;
+      }
+
+
+    &[data-active="0"]{
+        visibility: hidden;
+    }
+
+    &[data-active="1"]{
+        visibility: visible;
+    }
+
+    &_login{
+        margin-bottom: 8px;
+    }
+}
+

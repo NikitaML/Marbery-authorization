@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <section class="authorization">
+
+        <div class="authorization-wrapper">
+
+            <div class="authorization-banner">
+                <div class="authorization-banner__img"
+                    style="background-image: url(images/bg-form-authorization-2.png);">
+                </div>
+                <div class="authorization-banner__text">
+                    <span>IMAGINE </br> THINK </br> CREATE</span>
+                </div>
+            </div>
+            <div class="authorization-form">
+                <div class="authorization-form__inner">
+                    <div class="authorization-form__logo">
+                        <img src="images/logo.png" alt="">
+                    </div>
+                    <div class="authorization-form__inputs">
+                        <div class="form-interfaces">
+                            <wrapper-notice style="display: block; margin-bottom: 20px;" data-show="0">
+                                <notice class="notice" data-color="red"></notice>
+                            </wrapper-notice>
+                            <div class="form-interfaces__item authorization-form__item">
+                                <input id="login" class="input form-interfaces__input authorization-form__input"
+                                    type="text" autocomplete="off">
+                                <label class="label form-interfaces__label authorization-form__label">Email</label>
+                                <span class="authorization-form__status" data-status="empty"></span>
+                            </div>
+                            <span class="notice notice_login" data-active="0">В поле "Email" введен некорректный Email.</span>
+                            <div class="form-interfaces__item authorization-form__item">
+                                <input id="password" class="input form-interfaces__input authorization-form__input"
+                                    type="password" maxlength="16">
+                                <span class="show-password" data-status="hidden">
+                                    <svg class="icon_password">
+                                        <use xlink:href="images/sprite.svg#hidden-password" id="current-eye"></use>
+                                    </svg>
+                                </span>
+                                <label class="label form-interfaces__label authorization-form__label">Пароль</label>
+                                <span class="authorization-form__status" data-status="empty"></span>
+                            </div>
+                            <span class="notice" data-active="0">Поле "Пароль" не может быть короче 8 символов.</span>
+                        </div>
+                    </div>
+                    <div class="form-interfaces__btn authorization-form__btn">
+                        <button class="button" data-size="wide" data-color="green" data-tupe="login">
+                            <span class="button__icon">
+                                <i class="fas fa-sign-in"></i>
+                            </span>
+                            <div class="button__text authorization-form__btn-text">Log in</div>
+                        </button>
+                    </div>
+                    <div class="authorization-form__forgot">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                    <div class="form-interfaces__btn authorization-form__btn">
+                        <button class="button" data-size="wide" data-color="blue">
+                            <span class="button__icon">
+                                <i class="fas fa-sign-in"></i>
+                            </span>
+                            <div class="button__text authorization-form__btn-text">Registration</div>
+                        </button>
+                    </div>
+                    <div class="authorization-form__policy">
+                        <span>
+                            By clicking Join, I confirm that I have read and agree
+                            to the DeviantArt <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

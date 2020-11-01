@@ -1,0 +1,19 @@
+@import "../abstracts/variables";
+
+//Путь к папке шрифта
+@function font-url($fileName) {
+  @return $dist-fonts + $fileName;
+}
+
+//Миксин для семейства шрифтов
+@mixin family-font($familyFont, $fileName) {
+  @font-face {
+      font-family: $familyFont;
+      src:  local($familyFont),
+           // url(font-url($fileName + '/' + $fileName + '.eot')),
+           // url(font-url($fileName + '/' + $fileName + '.woff')) format('woff'),
+            url(font-url($fileName + '/' + $fileName + '.woff')) format('woff');
+      font-weight: normal;
+  }
+}
+

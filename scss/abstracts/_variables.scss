@@ -1,0 +1,51 @@
+//Путь к assets (шрифты, изображения, иконки)
+$dist-path: '../../../';
+
+//Тут у нас путь к папке шрифтов
+$dist-fonts: $dist-path + 'fonts/';
+
+//Имена папок шрифтов и файлов
+$font-base: 'pt-sans-regular';
+$font-medium: 'open-sans-semibold';
+$font-bold: 'open-sans-bold';
+$font-light: 'open-sans-regular';
+
+//Основные шрифты
+$font-family-base: $font-base, sans-serif;
+$font-family-medium: $font-medium, sans-serif;
+$font-family-bold: $font-bold, sans-serif;
+$font-family-light: $font-light, sans-serif;
+
+
+$rem: 1rem / 16px;
+// Для текста
+$tem: 1rem / 16px;
+
+/*  Строительные блоки шаблона. */
+$heightTop: 50px*$rem; //высота шапки
+$heightFooter: 50px*$rem; //высота футера
+$widthNavbar: 220px*$rem; //Ширина левой навигационной панели
+$widthShortNavbar: 53px*$rem; //ширина сайдбара на планшетке
+
+$grid-gap: 15px*$rem; //внешние отступы внутри основной контентной области
+$grid-gap-blocks: 15px*$rem; //внешние отступы у блоков в контенте
+$inner-gap: 15px*$rem; //внутри отступ у блока
+$margin-top-footer: 40px*$rem; //верхний отступ у футера
+
+$padding-topbar: $grid-gap; //внутренние отступы у левой части шапки
+
+$widthNavIcon: 53px*$rem; //ширина для иконки гамбургера и иконок в левой навигации
+
+$widthLogo: 82px*$rem; //ширина логотипа
+
+//стили для блока
+$block-border-radius: 3px*$rem;
+$block-border-width: 1px*$rem;
+
+$border-radius: 3px*$rem; // Радиус у кнопок и других элементов.
+$border-width: 1px*$rem; //Размер бордера
+
+
+$heightBtn: 30px*$rem;
+
+$heightInput: 35px*$rem;

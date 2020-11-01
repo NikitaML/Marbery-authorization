@@ -1,0 +1,115 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px*$rem 10px*$rem;
+
+    font-size: 14px*$tem;
+    font-family: $font-family-base;
+    text-align: center;
+    
+    border-radius: $border-radius;
+
+    transition: all 0.3s ease;
+
+    border: 1px solid transparent;
+   // white-space     : nowrap;
+    user-select     : none;
+    touch-action    : manipulation;
+    cursor          : pointer;
+
+    &:hover,
+    &:focus { 
+        text-decoration : none;
+        transition: all 0.3s ease;
+     }
+
+    &:focus { outline : none; }
+
+    &:active {
+        box-shadow : none;
+
+        &:focus { outline : none; }
+    }
+
+    &__icon {
+        margin-right: 6px*$rem;
+    }
+
+    &[data-type="go-up"] {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 0;
+
+        & i {
+            font-size: 22px;  
+            font-weight: 600;
+
+        }
+
+        transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+        &[data-show="0"] {
+            z-index: -1;
+
+            display: inline-flex !important;
+
+            transform: translateY(-20px);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &[data-show="1"] {
+            z-index: 55;
+
+            display: inline-flex !important;
+
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &[disabled="disabled"] {
+        cursor: default;
+
+        background-color: $btn-bg-other !important;
+
+        &:hover {
+            background-color: $btn-bg-other !important;
+        }
+    }
+
+    span {
+        transform: translateY(-1px);
+    }
+
+    &.small {
+        font-size: 14px*$tem;
+        font-family: $font-family-base;
+    }
+}
+
+wrapper-btn-disk {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px*$rem;
+    order: 3;
+
+    @include respond-to(mobile) {
+        width: auto;
+        margin-left: auto;
+        margin-right: 8px*$rem;
+        margin-top: 0;
+        order: 2;
+    }
+}

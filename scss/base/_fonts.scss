@@ -1,0 +1,11 @@
+@import '../abstracts/variables';
+@import '../mixin/fonts';
+
+//Здесь формируются сss стили семейства шрифтов
+@include family-font($font-base, $font-base);
+
+@include family-font($font-medium, $font-medium);
+
+@include family-font($font-bold, $font-bold);
+
+@include family-font($font-light, $font-light);
